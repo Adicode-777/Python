@@ -1,0 +1,36 @@
+def intro():
+    print("\nWelcome to the Text Adventure Game!")
+    print("You wake up in a mysterious forest. Two paths are ahead.")
+    choice = input("Do you go LEFT or RIGHT? ").lower()
+    if choice == "left":
+        left_path()
+    elif choice == "right":
+        right_path()
+    else:
+        print("Invalid choice. Try again!")
+        intro()
+
+def left_path():
+    print("\nYou walk along the left path and find a river.")
+    choice = input("Do you SWIM across or BUILD a raft? ").lower()
+    if choice == "swim":
+        print("\nThe current is too strong. You drown! Game Over.")
+    elif choice == "build":
+        print("\nYou build a raft and cross safely. You Win!")
+    else:
+        print("Invalid choice. Try again!")
+        left_path()
+
+def right_path():
+    print("\nYou take the right path and see a cave.")
+    choice = input("Do you ENTER the cave or WALK past it? ").lower()
+    if choice == "enter":
+        print("\nInside the cave, you find treasure. You Win!")
+    elif choice == "walk":
+        print("\nYou walk past and get lost in the forest. Game Over.")
+    else:
+        print("Invalid choice. Try again!")
+        right_path()
+
+# Start the game
+intro()
